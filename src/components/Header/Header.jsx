@@ -7,7 +7,7 @@ import { FaBloggerB } from "react-icons/fa";
 
 const Header = () => {
     return (
-        <div className='w-11/12 fixed top-8 ml-[4.1%]'>
+        <div className='w-[98%] fixed top-8 ml-[1%]'>
             <div className="navbar bg-base-100 rounded-3xl">
                 <div className="navbar-start">
                     <div className="dropdown">
