@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* fonts */
+body {
+    font-family: "Archivo";
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.besley-bold {
+    font-family: "Besley";
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
