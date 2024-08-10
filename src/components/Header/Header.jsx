@@ -8,7 +8,7 @@ import { FaBloggerB } from "react-icons/fa";
 const Header = () => {
     return (
         <div className='w-[98%] fixed top-8 ml-[1%]'>
-            <div className="navbar bg-base-100 rounded-3xl">
+            <div className="navbar bg-base-200 rounded-3xl">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -28,25 +28,25 @@ const Header = () => {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                            <li><Link>Home</Link></li>
-                            <li><Link>All Toys</Link></li>
-                            <li><Link>My Toys</Link></li>
-                            <li><Link>Add A Toy</Link></li>
-                            <li><Link>Blogs</Link></li>
+                            <li><Link to={'/'}>Home</Link></li>
+                            <li><Link to={'/allToys'}>All Toys</Link></li>
+                            <li><Link to={'/myToys'}>My Toys</Link></li>
+                            <li><Link to={'/addToy'}>Add A Toy</Link></li>
+                            <li><Link to={'/blogs'}>Blogs</Link></li>
                         </ul>
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1 text-xl">
-                            <li className='hover:text-orange-600'><Link><MdHome />Home</Link></li>
-                            <li className='hover:text-orange-600'><Link><MdOutlineToys />All Toys</Link></li>
-                            <li className='hover:text-orange-600'><Link><MdToys />My Toys</Link></li>
-                            <li className='hover:text-orange-600'><Link><MdAdd/>Add A Toy</Link></li>
-                            <li className='hover:text-orange-600'><Link><FaBloggerB/>Blogs</Link></li>
+                            <li className='hover:text-orange-600'><Link to={'/'}><MdHome />Home</Link></li>
+                            <li className='hover:text-orange-600'><Link to={'allToys'}><MdOutlineToys />All Toys</Link></li>
+                            <li className='hover:text-orange-600'><Link to={'/myToys'}><MdToys />My Toys</Link></li>
+                            <li className='hover:text-orange-600'><Link to={'/addToy'}><MdAdd/>Add A Toy</Link></li>
+                            <li className='hover:text-orange-600'><Link to={'/blogs'}><FaBloggerB/>Blogs</Link></li>
 
                         </ul>
                     </div>
                 </div>
-                <Link className="besley-bold text-4xl">Lynna</Link>
+                <Link className="besley-bold text-4xl">ToyHub</Link>
                 <div className="navbar-end lg:pe-2 ">
                     <Link className='mx-5 btn btn-ghost hover:text-orange-600'>Profile</Link>
                     <Link className='btn btn-ghost hover:text-orange-600'>Login</Link>

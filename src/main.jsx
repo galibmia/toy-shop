@@ -9,6 +9,7 @@ import Main from './layouts/Main';
 import Home from './pages/Home/Home';
 import Toys from './pages/Toys/Toys';
 import ToyDetails from './pages/ToyDetails/ToyDetails';
+import AddToys from './pages/AddToys/AddToys';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: 'toys/:id',
         element: <ToyDetails></ToyDetails>
+      },
+      {
+        path: 'addToy',
+        element: <AddToys></AddToys>
       }
     ]
   },

@@ -49,6 +49,11 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Dya and Craft Section */}
+            <div className='mt-24'>
+
+            </div>
         </div>
     );
 };
