@@ -1,15 +1,42 @@
 import React from 'react';
-import bannerImg from "../../assets/images/wooden-toys-home-img-1-new.jpg"
-import categoryImg1 from "../../assets/images/wooden-toys-home-img-2-new.jpg"
-import categoryImg2 from "../../assets/images/wooden-toys-home-img-3.jpg"
-import categoryImg3 from "../../assets/images/wooden-toys-home-img-4.jpg"
-import { Link } from 'react-router-dom';
+import bannerImg from "../../assets/images/wooden-toys-home-img-1-new.jpg";
+import categoryImg1 from "../../assets/images/wooden-toys-home-img-2-new.jpg";
+import categoryImg2 from "../../assets/images/wooden-toys-home-img-3.jpg";
+import categoryImg3 from "../../assets/images/wooden-toys-home-img-4.jpg";
+import discountImg from "../../assets/images/wooden-toys-home-img-5.jpg";
+import { Link, useLoaderData } from 'react-router-dom';
 import { HiMiniShoppingBag } from "react-icons/hi2";
+import { FaArrowLeft } from "react-icons/fa";
 import useTitle from '../../hooks/useTitle';
-
+import Toy from '../../components/Toy/Toy';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import './Home.css';
 
 const Home = () => {
+
     useTitle('Home');
+    const toys = useLoaderData();
+
+    const responsive = {
+        superLargeDesktop: {
+            breakpoint: { max: 4000, min: 3000 },
+            items: 5
+        },
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 4
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1
+        }
+    };
+
     return (
         <div>
             {/* Hero Section */}
@@ -52,9 +79,36 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* Dya and Craft Section */}
-            <div className='mt-24'>
+            {/* Toy and Craft Section */}
+            <div className='mt-24 w-9/12 mx-auto'>
+                <Carousel
+                    responsive={responsive}
+                    ssr={true} // means to render carousel on server-side.
+                    infinite={true}
+                    autoPlay={true}
+                    autoPlaySpeed={2000}
+                    keyBoardControl={true}
+                    customTransition="transform 1000ms ease-in-out"
+                    transitionDuration={500}
+                    containerClass="carousel-container"
+                    removeArrowOnDeviceType={["tablet", "mobile"]}
+                    dotListClass="custom-dot-list-style"
+                    itemClass="carousel-item-padding-40-px"
+                >
+                    {
+                        toys.map(toy => <Toy key={toy._id} toy={toy} />)
+                    }
+                </Carousel>
+            </div>
 
+            {/* Discount Section */}
+            <div className='mt-24 flex'>
+                <div className='bg-[#FFFAF1] w-1/2'>
+
+                </div>
+                <div className='w-1/2'>
+                    <img src={discountImg} alt="" />
+                </div>
             </div>
         </div>
     );

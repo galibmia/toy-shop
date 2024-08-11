@@ -1,0 +1,65 @@
+.toy-card {
+    position: relative;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    margin: 10px;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    /* Ensure content doesn't overflow */
+}
+
+.toy-card:hover {
+    transform: scale(1.05);
+}
+
+.toy-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    /* Ensure the image takes up full width */
+}
+
+.toy-name {
+    font-size: 1.2em;
+    margin: 8px 0;
+}
+
+.toy-details {
+    font-size: 1em;
+    color: #555;
+}
+
+.toy-price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #000;
+}
+
+.toy-rating {
+    font-size: 1em;
+    color: #f39c12;
+}
+
+.toy-btn {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    padding: 10px 20px;
+    background-color: #47cbff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.toy-card:hover .toy-btn {
+    display: block;
+    opacity: 1;
+    /* Fade in the button */
+}
