@@ -1,0 +1,19 @@
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-item {
+    min-width: 100%;
+}
+
+.custom-dot-list-style {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.custom-dot-list-style button {
+    background: #fff;
+}

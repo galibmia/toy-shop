@@ -6,12 +6,12 @@ import categoryImg3 from "../../assets/images/wooden-toys-home-img-4.jpg";
 import discountImg from "../../assets/images/wooden-toys-home-img-5.jpg";
 import { Link, useLoaderData } from 'react-router-dom';
 import { HiMiniShoppingBag } from "react-icons/hi2";
-import { FaArrowLeft } from "react-icons/fa";
 import useTitle from '../../hooks/useTitle';
 import Toy from '../../components/Toy/Toy';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import './Home.css';
+import WhatPeopleSay from '../../components/WhatPeopleSay/WhatPeopleSay';
 
 const Home = () => {
 
@@ -37,6 +37,7 @@ const Home = () => {
         }
     };
 
+
     return (
         <div>
             {/* Hero Section */}
@@ -55,7 +56,7 @@ const Home = () => {
             </div>
 
             {/* Shop By Section */}
-            <div className='mt-20 w-[75%] mx-auto grid grid-cols-3 gap-6'>
+            <div className='mt-20 w-[75%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6'>
                 <div className=''>
                     <img src={categoryImg1} alt="" />
                     <div className='-mt-24 text-center'>
@@ -63,14 +64,14 @@ const Home = () => {
                         <Link className='underline hover:no-underline'>Shop Now</Link>
                     </div>
                 </div>
-                <div className=''>
+                <div className='mt-5 md:mt-0'>
                     <img src={categoryImg2} alt="" />
                     <div className='-mt-24 text-center'>
                         <h4 className='text-xl font-semibold mb-3'>Shop For Neutrals</h4>
                         <Link className='underline hover:no-underline'>Shop Now</Link>
                     </div>
                 </div>
-                <div className=''>
+                <div className='mt-5 md:mt-0'>
                     <img src={categoryImg3} alt="" />
                     <div className='-mt-24 text-center'>
                         <h4 className='text-xl font-semibold mb-3'>Shop For Girls</h4>
@@ -81,6 +82,8 @@ const Home = () => {
 
             {/* Toy and Craft Section */}
             <div className='mt-24 w-9/12 mx-auto'>
+                <h1 className='uppercase text-center text-gray-500'>diy & crafts</h1>
+                <h1 className='text-center mt-3 text-2xl mb-5'>Last Chance To Buy</h1>
                 <Carousel
                     responsive={responsive}
                     ssr={true} // means to render carousel on server-side.
@@ -102,14 +105,22 @@ const Home = () => {
             </div>
 
             {/* Discount Section */}
-            <div className='mt-24 flex'>
-                <div className='bg-[#FFFAF1] w-1/2'>
-
+            <div className='mt-24 md:flex'>
+                <div className='md:w-1/2 bg-[#FFFAF1] py-10'>
+                    <div className='text-center mt-20 md:mt-80'>
+                        <h4 className=' font-bold text-4xl'>Wooden Set
+                            <br /> Up To 20% Off</h4>
+                        <p className='text-lg mt-6 w-[60%] mx-auto'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremqu.</p>
+                        <Link to={'/toys'}><span className='btn border-red-300 bg-red-300 mt-8 hover:bg-transparent hover:border-red-400 px-8 py-4'><HiMiniShoppingBag /> SHOP NOW</span></Link>
+                    </div>
                 </div>
-                <div className='w-1/2'>
-                    <img src={discountImg} alt="" />
+                <div className='md:w-1/2 bg-[#C9E4F9]'>
+                    <img className='max-h-screen' src={discountImg} alt="" />
                 </div>
             </div>
+
+            {/* What people say section */}
+                <WhatPeopleSay></WhatPeopleSay>
         </div>
     );
 };
