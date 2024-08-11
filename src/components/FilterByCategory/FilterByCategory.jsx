@@ -12,7 +12,7 @@ const FilterByCategory = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch('http://localhost:5000/toys'); // Replace with your API endpoint
+                const response = await fetch('https://toy-shop-server-nu.vercel.app/toys'); // Replace with your API endpoint
                 const data = await response.json();
                 setProducts(data);
                 setIsLoading(false);

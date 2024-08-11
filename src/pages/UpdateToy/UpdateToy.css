@@ -1,0 +1,7 @@
+.btn-custom{
+    background-color: #1E2037;
+    font-size: 20px !important;
+}
+.btn-custom:hover{
+    background-color: #101124 !important;
+}
