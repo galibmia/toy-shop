@@ -5,9 +5,11 @@ import categoryImg2 from "../../assets/images/wooden-toys-home-img-3.jpg"
 import categoryImg3 from "../../assets/images/wooden-toys-home-img-4.jpg"
 import { Link } from 'react-router-dom';
 import { HiMiniShoppingBag } from "react-icons/hi2";
+import useTitle from '../../hooks/useTitle';
 
 
 const Home = () => {
+    useTitle('Home');
     return (
         <div>
             {/* Hero Section */}

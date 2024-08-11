@@ -2,10 +2,13 @@ import React from 'react';
 import { Button, Checkbox, Label, Select, Textarea, TextInput } from "flowbite-react";
 import './AddToys.css'
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 
 const AddToys = () => {
-
+    useTitle('Add Toy')
+    const navigate = useNavigate('');
     const handleAddToy = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -47,6 +50,7 @@ const AddToys = () => {
                     icon: "success"
                   });
                 form.reset();
+                navigate('/');
             }
         })
     }
