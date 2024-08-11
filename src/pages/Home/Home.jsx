@@ -62,21 +62,21 @@ const Home = () => {
                     <img src={categoryImg1} alt="" />
                     <div className='-mt-24 text-center'>
                         <h4 className='text-xl font-semibold mb-3'>Shop For Boys</h4>
-                        <Link className='underline hover:no-underline'>Shop Now</Link>
+                        <Link to={'/toys'} className='underline hover:no-underline'>Shop Now</Link>
                     </div>
                 </div>
                 <div className='mt-5 md:mt-0'>
                     <img src={categoryImg2} alt="" />
                     <div className='-mt-24 text-center'>
                         <h4 className='text-xl font-semibold mb-3'>Shop For Neutrals</h4>
-                        <Link className='underline hover:no-underline'>Shop Now</Link>
+                        <Link to={'/toys'} className='underline hover:no-underline'>Shop Now</Link>
                     </div>
                 </div>
                 <div className='mt-5 md:mt-0'>
                     <img src={categoryImg3} alt="" />
                     <div className='-mt-24 text-center'>
                         <h4 className='text-xl font-semibold mb-3'>Shop For Girls</h4>
-                        <Link className='underline hover:no-underline'>Shop Now</Link>
+                        <Link to={'/toys'} className='underline hover:no-underline'>Shop Now</Link>
                     </div>
                 </div>
             </div>

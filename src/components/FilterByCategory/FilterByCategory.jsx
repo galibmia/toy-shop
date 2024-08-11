@@ -53,7 +53,7 @@ const FilterByCategory = () => {
                                     <p className="text-gray-700 dark:text-gray-400">Price: ${product.price}</p>
                                     <p className="text-gray-700 dark:text-gray-400">Available Quantity: {product.quantity} pcs</p>
                                 </div>
-                                <Link to={`toys/${product._id}`} className='btn'>See Details</Link>
+                                <Link to={`/toys/${product._id}`} className='btn'>See Details</Link>
                             </Card>
                         ))}
                     </div>
@@ -68,7 +68,7 @@ const FilterByCategory = () => {
                                     <p className="text-gray-700 dark:text-gray-400">Price: ${product.price}</p>
                                     <p className="text-gray-700 dark:text-gray-400">Available Quantity: {product.quantity} pcs</p>
                                 </div>
-                                <Link to={`toys/${product._id}`} className='btn'>See Details</Link>
+                                <Link to={`/toys/${product._id}`} className='btn'>See Details</Link>
                             </Card>
                         ))}
                     </div>
@@ -83,7 +83,7 @@ const FilterByCategory = () => {
                                     <p className="text-gray-700 dark:text-gray-400">Price: ${product.price}</p>
                                     <p className="text-gray-700 dark:text-gray-400">Available Quantity: {product.quantity} pcs</p>
                                 </div>
-                                <Link to={`toys/${product._id}`} className='btn'>See Details</Link>
+                                <Link to={`/toys/${product._id}`} className='btn'>See Details</Link>
                             </Card>
                         ))}
                     </div>
@@ -98,7 +98,7 @@ const FilterByCategory = () => {
                                     <p className="text-gray-700 dark:text-gray-400">Price: ${product.price}</p>
                                     <p className="text-gray-700 dark:text-gray-400">Available Quantity: {product.quantity} pcs</p>
                                 </div>
-                                <Link to={`toys/${product._id}`} className='btn'>See Details</Link>
+                                <Link to={`/toys/${product._id}`} className='btn'>See Details</Link>
                             </Card>
                         ))}
                     </div>
