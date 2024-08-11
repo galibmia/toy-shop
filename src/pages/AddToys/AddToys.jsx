@@ -46,7 +46,7 @@ const AddToys = () => {
             if(data.insertedId){
                 Swal.fire({
                     title: "Good job!",
-                    text: "You clicked the button!",
+                    text: "Toy added successfully",
                     icon: "success"
                   });
                 form.reset();
@@ -87,10 +87,10 @@ const AddToys = () => {
                         </div>
                         <Select id="category" name='category' required>
                             <option selected disabled>Select a Category</option>
-                            <option>Car</option>
-                            <option>Doll</option>
-                            <option>Boys</option>
-                            <option>Girls</option>
+                            <option value={'woodenDoll'}>Wooden Doll</option>
+                            <option value={'mixedDoll'}>Mixed Doll</option>
+                            <option value={'dollHouse'}>Doll House</option>
+                            <option value={'clothDoll'}>Cloth Doll</option>
                         </Select>
                     </div>
                     <div className='w-1/2'>

@@ -12,6 +12,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import './Home.css';
 import WhatPeopleSay from '../../components/WhatPeopleSay/WhatPeopleSay';
+import FilterByCategory from '../../components/FilterByCategory/FilterByCategory';
 
 const Home = () => {
 
@@ -120,7 +121,11 @@ const Home = () => {
             </div>
 
             {/* What people say section */}
-                <WhatPeopleSay></WhatPeopleSay>
+            <WhatPeopleSay></WhatPeopleSay>
+
+            <div className='mt-24 w-4/5 mx-auto mb-8'>
+                    <FilterByCategory></FilterByCategory>
+            </div>
         </div>
     );
 };
