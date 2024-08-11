@@ -15,6 +15,7 @@ import UpdateToy from './pages/UpdateToy/UpdateToy';
 import AuthProvider from './provider/AuthProvider';
 import PrivateRoutes from './components/PrivateRoutes/PrivateRoutes';
 import Login from './pages/Login/Login';
+import Register from './pages/Login/Register';
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
       }
     ]
   },

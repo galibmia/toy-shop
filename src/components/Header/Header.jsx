@@ -57,19 +57,29 @@ const Header = () => {
                 <div className="navbar-end lg:pe-2 relative group">
                     {
                         user ? (
-                            <div className="relative inline-block">
-                                <Avatar
-                                    alt="User settings"
-                                    img={user.photoURL}
-                                    rounded
-                                    className="cursor-pointer"
-                                />
-                                <div className="absolute left-1/2 transform -translate-x-1/2 bottom-full mb-2 w-max px-2 py-1 bg-gray-700 text-white text-xs rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    {user.displayName}
+                            <>
+                                <div className="relative inline-block">
+                                    <Avatar
+                                        alt="User settings"
+                                        img={user.photoURL}
+                                        rounded
+                                        className="cursor-pointer"
+                                    />
+                                    <div className="absolute left-1/2 transform -translate-x-1/2 bottom-full mb-2 w-max px-2 py-1 bg-gray-700 text-white text-xs rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        {user.displayName}
+                                    </div>
                                 </div>
-                            </div>
+                                <div>
+                                    <button 
+                                    className="btn btn-ghost hover:text-orange-600 ml-4"
+                                    onClick={handleLogOut}
+                                >
+                                    Logout
+                                </button>
+                                </div>
+                            </>
                         ) : (
-                            <Link className='btn btn-ghost hover:text-orange-600'>Login</Link>
+                            <Link to={'/login'} className='btn btn-ghost hover:text-orange-600'>Login</Link>
                         )
                     }
                 </div>
