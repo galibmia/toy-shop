@@ -46,7 +46,7 @@ const FilterByCategory = () => {
                 <TabPanel>
                     <div className="product-grid">
                         {filterProducts('woodenDoll').map(product => (
-                            <Card className="max-w-sm product-card" key={product.id}>
+                            <Card className="max-w-sm product-card" key={product._id}>
                                 <img src={product.image} alt={product.toyName} className="product-image" />
                                 <h5 className="text-2xl font-bold text-gray-900 dark:text-white">{product.toyName}</h5>
                                 <div className="flex justify-between mt-2">
@@ -61,7 +61,7 @@ const FilterByCategory = () => {
                 <TabPanel>
                     <div className="product-grid">
                         {filterProducts('mixedDoll').map(product => (
-                            <Card className="max-w-sm product-card" key={product.id}>
+                            <Card className="max-w-sm product-card" key={product._id}>
                                 <img src={product.image} alt={product.toyName} className="product-image" />
                                 <h5 className="text-2xl font-bold text-gray-900 dark:text-white">{product.toyName}</h5>
                                 <div className="flex justify-between mt-2">
@@ -76,7 +76,7 @@ const FilterByCategory = () => {
                 <TabPanel>
                     <div className="product-grid">
                         {filterProducts('dollHouse').map(product => (
-                            <Card className="max-w-sm product-card" key={product.id}>
+                            <Card className="max-w-sm product-card" key={product._id}>
                                 <img src={product.image} alt={product.toyName} className="product-image" />
                                 <h5 className="text-2xl font-bold text-gray-900 dark:text-white">{product.toyName}</h5>
                                 <div className="flex justify-between mt-2">
@@ -91,7 +91,7 @@ const FilterByCategory = () => {
                 <TabPanel>
                     <div className="product-grid">
                         {filterProducts('clothDoll').map(product => (
-                            <Card className="max-w-sm product-card" key={product.id}>
+                            <Card className="max-w-sm product-card" key={product._id}>
                                 <img src={product.image} alt={product.toyName} className="product-image" />
                                 <h5 className="text-2xl font-bold text-gray-900 dark:text-white text-center">{product.toyName}</h5>
                                 <div className="flex justify-between mt-2">

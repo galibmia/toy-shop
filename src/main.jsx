@@ -12,6 +12,9 @@ import ToyDetails from './pages/ToyDetails/ToyDetails';
 import AddToys from './pages/AddToys/AddToys';
 import MyToys from './pages/MyToys/MyToys';
 import UpdateToy from './pages/UpdateToy/UpdateToy';
+import AuthProvider from './provider/AuthProvider';
+import PrivateRoutes from './components/PrivateRoutes/PrivateRoutes';
+import Login from './pages/Login/Login';
 
 const router = createBrowserRouter([
   {
@@ -30,8 +33,8 @@ const router = createBrowserRouter([
       },
       {
         path: 'toys/:id',
-        element: <ToyDetails></ToyDetails>,
-        loader: ({params}) => fetch(`https://toy-shop-server-nu.vercel.app/toys/${params.id}`)
+        element: <PrivateRoutes><ToyDetails></ToyDetails></PrivateRoutes>,
+        loader: ({ params }) => fetch(`https://toy-shop-server-nu.vercel.app/toys/${params.id}`)
       },
       {
         path: 'addToy',
@@ -39,12 +42,16 @@ const router = createBrowserRouter([
       },
       {
         path: 'myToys',
-        element: <MyToys></MyToys>
+        element: <PrivateRoutes><MyToys></MyToys></PrivateRoutes>
       },
       {
         path: 'updateToy/:id',
         element: <UpdateToy></UpdateToy>,
-        loader: ({params}) => fetch(`https://toy-shop-server-nu.vercel.app/toys/${params.id}`)
+        loader: ({ params }) => fetch(`https://toy-shop-server-nu.vercel.app/toys/${params.id}`)
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
       }
     ]
   },
@@ -52,6 +59,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )

@@ -1,13 +1,14 @@
-// MyToyPage.jsx
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../../provider/AuthProvider';
 
 const MyToys = () => {
     useTitle('My Toys');
     const [toys, setToys] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const {loading, setLoading} = useContext(AuthContext);
 
     useEffect(() => {
         // Fetch the toys data from the API
@@ -16,33 +17,42 @@ const MyToys = () => {
                 const response = await fetch('https://toy-shop-server-nu.vercel.app/toys'); // Replace with your API endpoint
                 const data = await response.json();
                 setToys(data);
-                setIsLoading(false);
+                setLoading(false);
             } catch (error) {
                 console.error('Error fetching toys:', error);
-                setIsLoading(false);
+                setLoading(false);
             }
         };
 
         fetchToys();
     }, []);
 
-    const handleUpdate = (id) => {
-        // Handle update logic here
-        console.log(`Update toy with id: ${id}`);
+    const handleDelete = (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`https://toy-shop-server-nu.vercel.app/toys/${id}`, {
+                    method: 'DELETE',
+                });
+                setToys(toys.filter(toy => toy._id !== id));
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                });
+                
+            }
+        });
     };
 
-    const handleDelete = async (id) => {
-        try {
-            await fetch(`https://toy-shop-server-nu.vercel.app/toys/${id}`, {
-                method: 'DELETE',
-            });
-            setToys(toys.filter(toy => toy._id !== id));
-        } catch (error) {
-            console.error('Error deleting toy:', error);
-        }
-    };
-
-    if (isLoading) {
+    if (loading) {
         return (
             <div className='mt-28 w-28 mx-auto'>
                 <div className="loading w-28">Loading toys...</div>
