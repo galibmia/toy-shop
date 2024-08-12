@@ -15,8 +15,8 @@ const Header = () => {
     };
 
     return (
-        <div className='w-[98%] fixed top-8 ml-[1%] header'>
-            <div className="navbar bg-base-200 rounded-3xl">
+        <div className='w-full md:w-11/12 md:left-[4.1%] fixed top-5 header'>
+            <div className="navbar bg-base-200 rounded-3xl md:px-10">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -35,7 +35,7 @@ const Header = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><Link to={'/'}>Home</Link></li>
                             <li><Link to={'/toys'}>All Toys</Link></li>
                             <li><Link to={'/myToys'}>My Toys</Link></li>
@@ -43,22 +43,22 @@ const Header = () => {
                             <li><Link to={'/blogs'}>Blogs</Link></li>
                         </ul>
                     </div>
-                    <div className="navbar-center hidden lg:flex">
-                        <ul className="menu menu-horizontal px-1 text-xl">
-                            <li className='hover:text-orange-600'><Link to={'/'}><MdHome />Home</Link></li>
-                            <li className='hover:text-orange-600'><Link to={'/toys'}><MdOutlineToys />All Toys</Link></li>
-                            <li className='hover:text-orange-600'><Link to={'/myToys'}><MdToys />My Toys</Link></li>
-                            <li className='hover:text-orange-600'><Link to={'/addToy'}><MdAdd />Add A Toy</Link></li>
-                            <li className='hover:text-orange-600'><Link to={'/blogs'}><FaBloggerB />Blogs</Link></li>
-                        </ul>
-                    </div>
+                    <Link to="/" className="besley-bold text-4xl ml-2 lg:ml-0">ToyHub</Link>
                 </div>
-                <Link className="besley-bold text-4xl">ToyHub</Link>
-                <div className="navbar-end lg:pe-2 relative group">
+                <div className="navbar-center hidden lg:flex">
+                    <ul className="menu menu-horizontal px-1 text-xl">
+                        <li className='hover:text-orange-600'><Link to={'/'}><MdHome />Home</Link></li>
+                        <li className='hover:text-orange-600'><Link to={'/toys'}><MdOutlineToys />All Toys</Link></li>
+                        <li className='hover:text-orange-600'><Link to={'/myToys'}><MdToys />My Toys</Link></li>
+                        <li className='hover:text-orange-600'><Link to={'/addToy'}><MdAdd />Add A Toy</Link></li>
+                        <li className='hover:text-orange-600'><Link to={'/blogs'}><FaBloggerB />Blogs</Link></li>
+                    </ul>
+                </div>
+                <div className="navbar-end lg:pr-2 relative flex items-center">
                     {
                         user ? (
-                            <>
-                                <div className="relative inline-block">
+                            <div className="flex items-center">
+                                <div className="relative group">
                                     <Avatar
                                         alt="User settings"
                                         img={user.photoURL}
@@ -69,15 +69,13 @@ const Header = () => {
                                         {user.displayName}
                                     </div>
                                 </div>
-                                <div>
-                                    <button 
+                                <button
                                     className="btn btn-ghost hover:text-orange-600 ml-4"
                                     onClick={handleLogOut}
                                 >
                                     Logout
                                 </button>
-                                </div>
-                            </>
+                            </div>
                         ) : (
                             <Link to={'/login'} className='btn btn-ghost hover:text-orange-600'>Login</Link>
                         )

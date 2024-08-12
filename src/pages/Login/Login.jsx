@@ -7,7 +7,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
-    const { signInWithGoogle, setError, setUser } = useContext(AuthContext);
+    const { signInWithGoogle, setError, setUser, signInWithPassword } = useContext(AuthContext);
     // Navigate the route
     const location = useLocation();
     const navigate = useNavigate();
@@ -51,13 +51,13 @@ const Login = () => {
                     <div className="mb-2 block">
                         <Label htmlFor="email1" value="Your email" />
                     </div>
-                    <TextInput id="email1" type="email" placeholder="Your Email" required />
+                    <TextInput id="email1" type="email" placeholder="Your Email" name='email' required />
                 </div>
                 <div>
                     <div className="mb-2 block">
                         <Label htmlFor="password1" value="Your password" />
                     </div>
-                    <TextInput id="password1" type="password" placeholder='Your password' required />
+                    <TextInput id="password1" type="password" placeholder='Your password' name='password' required />
                 </div>
 
                 <Button className='bg-orange-500 btn-custom' type="submit">Login</Button>
